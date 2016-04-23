@@ -1,0 +1,56 @@
+create table role (
+id int primary key AUTO_INCREMENT,
+role_name varchar(256) 
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1
+
+
+
+
+create table user (
+
+id int primary key AUTO_INCREMENT,
+login varchar(32),
+mypassword varchar(32),
+firstname varchar(32),
+lastname varchar(32),
+age int(11),
+role_id int,
+foreign key (role_id) references role(id)
+
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1
+
+
+
+
+
+
+create table music_type(
+id int primary key AUTO_INCREMENT,
+type_name varchar(256)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1
+
+
+
+
+
+
+create table user_musictype(
+user_id int,
+music_type_id int,
+foreign key (user_id) references
+user(id),
+foreign key (music_type_id)
+references music_type(id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+
+
+
+
+
+create table address(
+id int primary key AUTO_INCREMENT,
+country varchar(256),
+street varchar(256),
+zip int
+)ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8

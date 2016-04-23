@@ -1,0 +1,61 @@
+дл€ подключени€ tiles открываю 3 адреса:
+http://tiles.apache.org/framework/tutorial/basic/concepts.html
+http://tiles.apache.org/framework/tutorial/basic/pages.html
+http://docs.spring.io/spring/docs/4.0.3.BUILD-SNAPSHOT/spring-framework-reference/htmlsingle/#view-tiles
+...и использую видео пример:
+https://www.youtube.com/watch?v=V9244FjHT2M
+
+»ду по примеру и делаю следующее:
+-копирую эту зависимость сюда(C:\Users\јдминистратор\Desktop\Oracle\Ћеха скинул\10.02.2016\src\main\resources\spring\dispatcherServlet.xml)
+
+<bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+    <property name="definitions">
+        <list>
+            <value>/WEB-INF/defs/general.xml</value>
+            <value>/WEB-INF/defs/widgets.xml</value>
+            <value>/WEB-INF/defs/administrator.xml</value>
+            <value>/WEB-INF/defs/customer.xml</value>
+            <value>/WEB-INF/defs/templates.xml</value>
+        </list>
+    </property>
+</bean>
+
+-и Ё“ќ
+
+<bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+    <property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView"/>
+</bean>
+
+- —оздаю в папке "WEB-INF" папку "defs", в ней создаю файл "general.xml" и вставл€ю туда вот Ё“ќ
+
+<definition name="common" template="/WEB-INF/layout/classic.jsp">
+        <!--<put-attribute name="title" value="Tiles tutorial homepage" />-->
+        <!--<put-attribute name="header" value="/tiles/banner.jsp" />-->
+        <!--<put-attribute name="menu" value="/tiles/common_menu.jsp" />-->
+        <!--<put-attribute name="body" value="/tiles/home_body.jsp" />-->
+        <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp" />
+    </definition>
+    <definition name="index" extends="common">
+        <put-attribute name="title" value="Java Blog Agregator" />
+        <!--<put-attribute name="header" value="/tiles/banner.jsp" />-->
+        <!--<put-attribute name="menu" value="/tiles/common_menu.jsp" />-->
+        <!--<put-attribute name="body" value="/tiles/home_body.jsp" />-->
+        <put-attribute name="body" value="/WEB-INF/layout/index.jsp" />
+    </definition>
+
+-в pom.xml вставл€ю это
+
+<dependency>
+	<groupId>org.apache.tiles</groupId>
+	<artifactId>tiles-core</artifactId>
+	<version>3.0.3</version>
+</dependency>
+
+<dependency>
+	<groupId>org.apache.tiles</groupId>
+	<artifactId>tiles-jsp</artifactId>
+	<version>3.0.3</version>
+</dependency>
+
+
+

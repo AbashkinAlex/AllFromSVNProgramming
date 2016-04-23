@@ -1,0 +1,19 @@
+.block1 {
+    float: left;
+    position: relative;
+    top: 100px;
+    left: 50px;
+}
+
+.block2 {
+    position: fixed; /* Фиксированное положение */
+    right: 380px; /* Расстояние от правого края окна браузера */
+    bottom: 0%; /* Расстояние снизу */
+}
+table{
+      color: #f8f8f8;
+  }
+.colortext {
+    background-color: #ffe; /* Цвет фона */
+    color: #930; /* Цвет текста */
+}

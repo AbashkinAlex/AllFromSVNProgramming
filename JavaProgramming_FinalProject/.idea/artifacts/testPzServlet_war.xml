@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="testPzServlet:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="testPzServlet.war">
+      <element id="artifact" artifact-name="testPzServlet:war exploded" />
+    </root>
+  </artifact>
+</component>
